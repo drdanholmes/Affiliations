@@ -66,8 +66,9 @@ output:
 
 However, when you want mutliple authors affiliations you discover that you can't do as you would in LaTeX because [Pandoc]() does not know what to do with the affiliations and you end out a dishearting PDF that looks like the output shown in figure \@ref(fig:sosad) below:
 
-```{r sosad, echo=FALSE, fig.cap="This is so sad."}
+```{r sosad, echo=FALSE, fig.cap="This is so sad.", fig.align="center"}
 knitr::include_graphics("Images/badheader.png")
+library(png)
 ```
 
 The situation worsens if you want MS-Word output.  As those of us in medical fields know, most journals, with some notable exceptions like the [Clinical Mass Spectrometry Journal](https://www.journals.elsevier.com/clinical-mass-spectrometry) and other Elsevier journals like [Clinical Biochemistry](https://www.journals.elsevier.com/clinical-biochemistry) and [Clinica Chimica Acta](https://www.journals.elsevier.com/clinica-chimica-acta), require submission of a document in MS-Word format which goes against all that Data Science and Reprodicible Research stands for. Parenthetically, it is my hope that since [AACC](www.aacc.org) has indicated to make Data Science a strategic priority for Lab Medicine, that they will soon accept submissons to [Clinical Chemistry](http://clinchem.aaccjnls.org/) and [Journal of Applied Laboratory Medicine](http://jalm.aaccjnls.org/) written reproducibly in RMardown or LaTeX. 
@@ -88,8 +89,8 @@ brew install pandoc-crossref
 
 There are some extra installs required to help Pandoc do its job. Install the prebuilt binaries if you can.
 
-+ [pandoc-citeproc]()
-+ [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref)
++ [pandoc-citeproc](http://hackage.haskell.org/package/pandoc-citeproc)
++ [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref/releases/tag/v0.3.4.1a)
 
 Finally, you need to use some scripts written in the Lua scripting language which means you will need the language itself:
 + [lua language](https://www.lua.org/download.html)
@@ -103,7 +104,7 @@ These are in Pandoc github repository:
 
 You want the files named [scholarly-metadata.lua](https://raw.githubusercontent.com/pandoc/lua-filters/master/scholarly-metadata/scholarly-metadata.lua) and [author-info-blocks.lua](https://raw.githubusercontent.com/pandoc/lua-filters/master/author-info-blocks/author-info-blocks.lua).
 
-You will need to choose a .csl file for your journal. This will tell Pandoc how to format the references. You can download the correct .csl file [here](https://www.zotero.org/styles). You will also need a journal abbreviations database. I have made one for you from the [Web of Science list](https://images.webofknowledge.com/images/help/WOS/A_abrvjt.html) and you can download it [here]().
+You will need to choose a .csl file for your journal. This will tell Pandoc how to format the references. You can download the correct .csl file [here](https://www.zotero.org/styles). You will also need a journal abbreviations database. I have made one for you from the [Web of Science list](https://images.webofknowledge.com/images/help/WOS/A_abrvjt.html) and you can download it [here](https://github.com/drdanholmes/Affiliations/blob/master/Extras/abbreviations.json).
 
 You will need to creat a .bibtex database which is just your list of references. This can be exported from various reference managers or built by hand. Name the file `mybibfile.bib`.
 
@@ -112,11 +113,11 @@ Now follow the bouncing ball:
 1. Go to the directory containing your .Rmd file.
 2. Create a directory in it called "Extras"
 3. Put the two Lua scripts, the Bibtex database, the abbreviations database and the .csl file into the "Extras" folder.
-4. If you want to avoid Pandoc's goofy default .docx formatting, then put [this word document]() in the same folder.
+4. If you want to avoid Pandoc's goofy default .docx formatting, then put [this word document](https://github.com/drdanholmes/Affiliations/blob/master/Extras/Reference_Document.docx) in the same folder.
 
 OR
 
-Download [the contents of this folder]() from my github folder that has everything set up as I describe above.
+Download [the contents of this folder](https://github.com/drdanholmes/Affiliations) from my github folder that has everything set up as I describe above.
 
 For two authors, your YAML will need to look like this:
 
@@ -162,7 +163,7 @@ keywords: "CRAN, R, RMarkdown, RStudio, YAML"
 
 Et voila! Figure \@ref(fig:sohappy) shows that we have something reasonable.
 
-```{r sohappy, echo=FALSE, fig.cap="This is so great"}
+```{r sohappy, echo=FALSE, fig.cap="This is so great", fig.align="center"}
 knitr::include_graphics("Images/goodheader.png")
 ```
 
@@ -248,7 +249,7 @@ keep-latex: true
 
 And as you can see in \@ref(fig:sohappylatex) you get a correctly list of authors.
 
-```{r sohappylatex, echo=FALSE, fig.cap="This is also great."}
+```{r sohappylatex, echo=FALSE, fig.cap="This is also great.", fig.align="center"}
 knitr::include_graphics("Images/goodheaderlatex.png")
 ```
 
@@ -294,7 +295,6 @@ output: pdf_document
 # Conclusion
 
 This concludes my long personal struggle to get a completely reproducible .docx manusript genereated by RMardown and Pandoc.
-
 
 ## Parting Thought
 
