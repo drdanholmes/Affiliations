@@ -22,7 +22,7 @@ The output for MS-Word looks like this:
 
 ## Use
 
-Download .Rmd templates and folders, put them in a directory, open either the Word or LaTeX template in knit. All of the necessary filters and files are in the Extras folder.
+Download .Rmd templates and folders, put them in a directory, open either the Word or LaTeX template and knit. Files must have the same relative paths as in the repository. All of the necessary filters and files are in the Extras folder.
 
 ## Contact
 
