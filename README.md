@@ -2,7 +2,7 @@
 RMarkdown Templates for Managing Academic Affiliations for MS-Word and LaTeX
 
 ## Background
-The repository provides an RMardown templte for MS-Word or PDF output that allows for multiple authors with disparate affiliations. The problem and solution are discussed [here](http://labrtorian.com/2019/08/26/rmarkdown-template-that-manages-academic-affiliations/). The template handles authors, affiliations, emails, cross referencing of figures/tables, references and reference abbrebations.
+The repository provides an RMardown template for MS-Word or PDF output that allows for multiple authors with disparate affiliations. The problem and solution are discussed [here](http://labrtorian.com/2019/08/26/rmarkdown-template-that-manages-academic-affiliations/). The template handles authors, affiliations, emails, cross referencing of figures/tables, references and reference abbrebations.
 
 The output for MS-Word looks like this:
 
