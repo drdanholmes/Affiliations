@@ -30,8 +30,8 @@ output:
       - --csl=Extras/clinical-mass-spectrometry.csl
       - --citation-abbreviations=Extras/abbreviations.json
       - --template=Extras/mytemplate.tex
+  keep_tex: true
 bibliography: "Extras/mybibfile.bib"
-keep-latex: true
 ---
 
 ```{r setup, include=FALSE}
